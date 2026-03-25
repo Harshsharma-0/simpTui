@@ -1,6 +1,4 @@
-#ifndef VT100_HPP
-#define VT100_HPP
-
+#pragma once
 #include <iostream>
 
 namespace vt100 {
@@ -50,5 +48,3 @@ inline void moveUpAndClearBelow(int n) {
   std::cout << "\033[0J";
 };
 } // namespace vt100
-
-#endif // VT100_HPP

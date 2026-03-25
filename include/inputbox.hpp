@@ -1,6 +1,7 @@
 #pragma once
 #include <ncurses.h>
 #include <panel.h>
+#include <string>
 class simpTuiInputBox {
 
 public:
@@ -23,6 +24,7 @@ public:
   };
   void show(const char *title, const char *defaultstr, std::string &store,
             int max, bool (*validate)(std::string &str)) {
+
     if (validate == nullptr)
       return;
 
@@ -111,7 +113,7 @@ private:
   char *panelstring = nullptr;
   int h = 0, w = 0, x = 0, y = 0;
   std::string inputchar;
-  bool hidden = false;
+  bool hidden = true;
   WINDOW *window = nullptr;
   PANEL *panel = nullptr;
 };
