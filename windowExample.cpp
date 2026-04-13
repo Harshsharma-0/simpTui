@@ -1,4 +1,4 @@
-#include "include/keymap.hpp"
+#include <iostream>
 #include "include/panel.hpp"
 #include "include/simpTui.hpp"
 
@@ -18,11 +18,7 @@ int main() {
   mainWindow.pushitem("press CTRL + A to exit", 0, 0, nullptr, nullptr);
   mainWindow.show();
 
-  simpTuiKeyMap keymap;
-  keymap.addCtrl('a').end([](int ch) -> bool { return true; });
-
-  keymap.mount();
-
+ getch();
   simpTuiRestore();
 
   return 0;
